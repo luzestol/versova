@@ -1,10 +1,7 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  font-size: 16px;
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,18 +11,31 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  font-family: "SF Pro Display";
+  font-weight: 300;
+  color: #323232;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+a:hover {
+  cursor: pointer;
+}
+
+button {
+  font-family: "Poppins";
+  font-size: 1em;
+  font-weight: 400;
+  background-color: #67E1E2;
+  color: #ffffff;
+  padding: 0.2em 2em;
+  border: none;
+  border-radius: 50px;
 }
 
 @keyframes App-logo-spin {

@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display'), url(./fonts/SFProDisplay/SFProDisplayRegular.otf) format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display'), url(./fonts/SFProDisplay/SFProDisplayMedium.otf) format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins'), url(./fonts/Poppins/PoppinsMedium.ttf) format('truetype');
+  font-weight: 400;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
