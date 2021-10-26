@@ -31,7 +31,7 @@
     padding: 0 1em;
 }
 
-.navbar-collapse ul li.active-item {
+.navbar-collapse ul li a.active {
     font-weight: 400;
     color: #67E1E2;
 }

@@ -23,6 +23,11 @@
   
 }
 
+a {
+  color: #323232;
+  text-decoration: none;
+}
+
 a:hover {
   cursor: pointer;
 }

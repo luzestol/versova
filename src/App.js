@@ -1,9 +1,7 @@
 
 import './App.css';
-import { CartWidget } from './components/cartwidget/CartWidget';
-import { ItemCount } from './components/itemcount/ItemCount';
-import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
-import { NavBar } from './components/navbar/NavBar.js'
+import { ItemListContainer } from './containers/ItemListContainer/ItemListContainer';
+import { NavBar } from './components/NavBar/NavBar.js'
 
 function App() {
 
@@ -11,8 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
       <NavBar />
-      <ItemListContainer greeting="¡Esto es un texto provisorio! 🤙🏼"/>
-      <ItemCount />
+      <ItemListContainer/>
       </header>
     </div>
   );
