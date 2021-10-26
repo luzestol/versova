@@ -7,10 +7,11 @@ import { useState } from 'react';
 
 export function ItemListContainer () {
 
-    //const initial = 0;
-    //const stock = 0;
+    const initial = 1;
 
     const [count, setCount] = useState(initial);
+
+    const stock = 10;
 
     const onAdd = () => {
         if (count < stock) setCount(count + 1);
@@ -18,14 +19,14 @@ export function ItemListContainer () {
     }
 
     const onRemove = () => {
-        if (count > 1) setCount(count - 1);
-        console.log("onRemove" + count);
+        if (count > 0) setCount(count - 1);
+        //console.log("onRemove" + count);
     }
 
     return (
         <div>
             <div className="wrapper">
-                <ItemCount stock="7" initial="5" onAdd={onAdd} onRemove={onRemove} />
+                <ItemCount stock={10} initial={count} onAdd={onAdd} onRemove={onRemove} />
             </div>
             <div>
                 <Item />
