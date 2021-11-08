@@ -1,7 +1,8 @@
 import './ItemListContainer.css';
 import { ItemCount } from '../../components/ItemCount/ItemCount';
 import '../../components/ItemCount/ItemCount.css';
-import { Item } from '../../components/Item/Item'
+//import { Item } from '../../components/Item/Item'
+import { ItemList } from '../../components/ItemList/ItemList'
 import { useState } from 'react';
 
 
@@ -15,7 +16,6 @@ export function ItemListContainer () {
 
     const onAdd = () => {
         if (count < stock) setCount(count + 1);
-        console.log('onAdd' + count);
     }
 
     const onRemove = () => {
@@ -26,10 +26,10 @@ export function ItemListContainer () {
     return (
         <div>
             <div className="wrapper">
-                <ItemCount stock={10} initial={count} onAdd={onAdd} onRemove={onRemove} />
+                <ItemCount stock={stock} initial={count} onAdd={onAdd} onRemove={onRemove} />
             </div>
-            <div>
-                <Item />
+            <div className="wrapper">
+                <ItemList />
             </div>
         </div>
         
