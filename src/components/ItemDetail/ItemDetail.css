@@ -1,0 +1,66 @@
+.itemdetail-wrapper {
+    width: 75%;
+    max-width: 1000px;
+    height: 25em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 100px rgba(50, 50, 50, 0.1);
+    padding: 25px;
+    border-radius: 25px;
+    margin: 1em 0;
+}
+
+.item-info {
+    width: 30%;    
+}
+
+
+.item-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+    margin: 0 1em;
+}
+
+.item-image img {
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    margin: 0 0 0.3em 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    -webkit-background-size: cover;
+}
+
+.item-info h2 {
+    font-family: 'Poppins';
+    font-size: 2em;
+    color: #323232;
+    text-align: left;
+    margin: 0;   
+}
+
+.item-info h3 {
+    font-family: 'SF Pro Display';
+    font-weight: 400;
+    font-size: 1.8em;
+    color: #323232;
+    text-align: left;
+    margin: 0.5em 0 0 0; 
+}
+
+.item-info p {
+    font-family: 'SF Pro Display';
+    font-weight: 300;
+    font-size: 1em;
+    color: #323232;
+    opacity: 90%;
+    text-align: left;
+    margin: 1em 0; 
+}

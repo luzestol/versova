@@ -1,11 +1,10 @@
 .counter-wrapper {
-    width: 15em;
+    width: 100%;
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
-    box-shadow: 5px 5px 100px rgba(50, 50, 50, 0.1);
-    padding: 25px;
     border-radius: 25px;
+    margin: 2em 0 0 0;
 }
 
 .counter {
@@ -19,3 +18,9 @@
     display: flex;
     justify-content: center;
 }
+
+/* BOX SHADOW COUNTER 
+
+ box-shadow: 5px 5px 100px rgba(50, 50, 50, 0.1);
+
+ */
