@@ -1,5 +1,5 @@
 import stickerImg from '../img/sticker.jpg';
-import remeraImg from '../img/remera.jpg';
+import remeraImg from '../img/remera.JPG';
 // las rutas a las imágenes son provisorias
 
 export const productsData = [
