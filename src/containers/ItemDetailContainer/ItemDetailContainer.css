@@ -1,0 +1,7 @@
+.wrapper {
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 2em 0;
+}

@@ -3,7 +3,9 @@ import './ItemDetail.css';
 import { ItemCount } from '../../components/ItemCount/ItemCount';
 import '../../components/ItemCount/ItemCount.css';
 
-export const ItemDetail = ({name, price, pictureUrl, description}) => {
+export const ItemDetail = (props) => {
+
+    console.log(props);
 
     const initial = 1;
 
@@ -16,19 +18,19 @@ export const ItemDetail = ({name, price, pictureUrl, description}) => {
     }
 
     const onRemove = () => {
-        if (count > 0) setCount(count - 1);
+        if (count > 1) setCount(count - 1);
         //console.log("onRemove" + count);
     }
 
     return (
         <div className="itemdetail-wrapper">
             <div className="item-image">
-                <img alt="" src={pictureUrl}></img>
+                <img alt="" src={props.details.pictureUrl}></img>
             </div>
             <div className="item-info">
-                <h2> {name} </h2>
-                <h3> ${price} </h3>
-                <p> {description} </p>
+                <h2> {props.details.name} </h2>
+                <h3> ${props.details.price} </h3>
+                <p> {props.details.description} </p>
                 <ItemCount stock={stock} initial={count} onAdd={onAdd} onRemove={onRemove} />
             </div>
         </div>

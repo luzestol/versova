@@ -1,14 +1,16 @@
 import {productsData} from '../../productsData/productsData.js';
 import { useEffect, useState } from 'react';
 import { ItemDetail } from '../../components/ItemDetail/ItemDetail.js';
+import { useParams } from 'react-router-dom';
 
 export const ItemDetailContainer = () => {
 
-    const [detail, setDetail] = useState(null);
+    const [itemDetail, setItemDetail] = useState(null);
+    const { itemId } = useParams();
+    //console.log(itemId);
 
     function getItem(item) {
         const promise = new Promise ((resolve,reject) => {
-
             setTimeout(() => {
                 resolve(item);
             }, 2000)
@@ -17,27 +19,29 @@ export const ItemDetailContainer = () => {
 
         promise.then(
             (result) => {
-                console.log(result);
-                setDetail(result);
+                //console.log(result);
+                const product = result.find((product) => product.id === parseInt(itemId));
+                setItemDetail(product);
+                //console.log(product);
+                
+                //console.log(itemDetail);
             }, (err) => {
-                console.log(err);
+                //console.log(err);
             }
         )
         .catch((err) => {
-            console.log(err);
+            //console.log(err);
         });
 
     }
 
     useEffect(() => {
-        getItem(productsData[0]); 
-    }, []);
+        getItem(productsData);
+    }, [itemId]);
     
-    
-
     return (
-        <>  
-            { detail ?  <ItemDetail name={detail.name} pictureUrl={detail.pictureUrl} price={detail.price} description={detail.description}  /> : "Loading..." }   
-        </>
+        <div className="wrapper">  
+            { itemDetail ?  <ItemDetail details={itemDetail}  /> : "Loading..." }   
+        </div>
     )
 }
