@@ -5,21 +5,34 @@ import '../../components/ItemCount/ItemCount.css';
 
 export const ItemDetail = (props) => {
 
-    console.log(props);
+    // LÓGICA ITEM COUNT
 
     const initial = 1;
 
     const [count, setCount] = useState(initial);
 
-    const stock = 10;
+    const stock = props.details.stock;
 
-    const onAdd = () => {
-        if (count < stock) setCount(count + 1);
+    const add = () => {
+        if (count < stock) setCount(count + 1);    
+    }               
+
+    const remove = () => {
+        if (count > 1) setCount(count - 1);
     }
 
-    const onRemove = () => {
-        if (count > 1) setCount(count - 1);
-        //console.log("onRemove" + count);
+    //LÓGICA DISPLAY ITEM COUNT
+
+    const [display, setDisplay] = useState(true);
+
+    const onAdd = (count) => {
+        console.log("Sumaste " + count + " productos.");
+        setDisplay(false);
+        //console.log(count);
+
+        // desmontar el carrito
+        // desactivar funciones del carrito
+        // montar otro return, con boton con link a /cart
     }
 
     return (
@@ -31,7 +44,8 @@ export const ItemDetail = (props) => {
                 <h2> {props.details.name} </h2>
                 <h3> ${props.details.price} </h3>
                 <p> {props.details.description} </p>
-                <ItemCount stock={stock} initial={count} onAdd={onAdd} onRemove={onRemove} />
+                <ItemCount stock={stock} initial={count} count={count} add={add} remove={remove} onAdd={onAdd} display={display} />
+                
             </div>
         </div>
     )

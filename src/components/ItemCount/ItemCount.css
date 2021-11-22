@@ -12,11 +12,12 @@
     justify-content: space-between;
 }
 
-.stock {
+.span {
     color: #C7C7C7;
     font-weight: 300;
     display: flex;
     justify-content: center;
+    margin-bottom: 0.5em;
 }
 
 /* BOX SHADOW COUNTER 
