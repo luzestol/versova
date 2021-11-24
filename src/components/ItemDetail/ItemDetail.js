@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './ItemDetail.css';
 import { ItemCount } from '../../components/ItemCount/ItemCount';
 import '../../components/ItemCount/ItemCount.css';
+import { useCartContext } from '../../contexts/CartContext/CartContext'
 
 export const ItemDetail = (props) => {
 
@@ -24,16 +25,21 @@ export const ItemDetail = (props) => {
     //LÓGICA DISPLAY ITEM COUNT
 
     const [display, setDisplay] = useState(true);
+    
+
+    // FUNCIÓN ONADD
 
     const onAdd = (count) => {
         console.log("Sumaste " + count + " productos.");
+        console.log(props.details); //este es el {objeto} del item que necesito
         setDisplay(false);
-        //console.log(count);
-
-        // desmontar el carrito
-        // desactivar funciones del carrito
-        // montar otro return, con boton con link a /cart
+        
     }
+
+    // CART CONTEXT 
+
+    const { addItem, removeItem, clear, isInCart } = useCartContext();
+
 
     return (
         <div className="itemdetail-wrapper">
