@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './ItemDetail.css';
 import { ItemCount } from '../../components/ItemCount/ItemCount';
 import '../../components/ItemCount/ItemCount.css';
-import { useCartContext } from '../../contexts/CartContext/CartContext'
+import { useCartContext } from '../../contexts/CartContext/CartContext';
 
 export const ItemDetail = (props) => {
 

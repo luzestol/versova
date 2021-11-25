@@ -1,7 +1,12 @@
-.greeting-wrapper {
-    width: 100%;
+.wrapper {
+    padding: 1em 0 0 0;
 }
 
-.greeting-wrapper p {
-    text-align: center !important;
+.h2 {
+    font-family: 'Poppins';
+    font-size: 1.1em;
+    font-weight: 300;
+    color: #323232;
+    text-align: left;
+    margin: 0;   
 }
