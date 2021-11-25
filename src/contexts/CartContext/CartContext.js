@@ -8,32 +8,38 @@ export const CartProvider = ({children}) => {
     const [cart, setCart ] = useState([]);
 
     // AGREGAR ITEM
-    const addItem = (item) => {
-        // {item} es el objeto que exporto desde el itemCount
-        setCart([...cart, item]);
-        console.log("Me agrega un objeto al array");
+    const addItem = (item, quantity) => {
+
+        //console.log(item);
+        //console.log(quantity);
+
+        const addedItem = {...item, count: quantity };
+        const isInCart = cart.some((product) => product.id === item.id);
+        if (!isInCart) {
+            setCart([...cart, addedItem]);
+        }
+
+        console.log("Item added to cart");
+        console.log(cart);
+
+        return;
+
     }
 
     // REMOVER ITEM
-    const removeItem = (item) => {
-        // remover el {item} del array por su id
-        // setear el array
-        console.log("Me remueve un objeto del array");
+    const removeItem = (id) => {
+        setCart(cart.filter((item) => item.id !== id));
+        console.log("Item removed from cart");
     }
 
     // CLEAR CART
-    const clear = (cart) => {
-        // clear [cart]
-        console.log("Clears cart");
-    }
-
-    // CONDICIONAL IS IN CART? evita duplicados, por id
-    const isInCart = (itemId) => {
-        console.log("Chequea si hay duplicados");
+    const clear = () => {
+        setCart([]);
+        console.log("Cart cleared");
     }
 
     return (
-        <CartContext.Provider value={{ addItem, removeItem, clear, isInCart }}>
+        <CartContext.Provider value={{ addItem, removeItem, clear }}>
             {children}
         </CartContext.Provider>
     )

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export function ItemCount ({stock, initial, count, add, remove, onAdd, display }) {
+export function ItemCount ({stock, initial, count, item, add, remove, onAdd, display }) {
     
     return (
         <> 
@@ -11,7 +11,7 @@ export function ItemCount ({stock, initial, count, add, remove, onAdd, display }
                     <span> {initial} </span>
                     <button onClick={add} className="button-tertiary">+</button>
                 </div>
-                <button onClick={() => {onAdd(count)}} >Agregar al carrito</button>
+                <button onClick={() => {onAdd(item, count)}} >Agregar al carrito</button>
                 <span className="span">{stock} disponibles</span>
             </div>
         }

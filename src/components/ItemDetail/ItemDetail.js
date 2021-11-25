@@ -6,6 +6,11 @@ import { useCartContext } from '../../contexts/CartContext/CartContext'
 
 export const ItemDetail = (props) => {
 
+    // CART CONTEXT 
+
+    const { addItem } = useCartContext();
+    
+
     // LÓGICA ITEM COUNT
 
     const initial = 1;
@@ -29,18 +34,15 @@ export const ItemDetail = (props) => {
 
     // FUNCIÓN ONADD
 
-    const onAdd = (count) => {
-        console.log("Sumaste " + count + " productos.");
-        console.log(props.details); //este es el {objeto} del item que necesito
+    const onAdd = (item, quantity) => {
+        console.log("Sumaste " + quantity + " productos.");
+        console.log(item); //este es el {objeto} del item que necesito
+        addItem(item, quantity);
         setDisplay(false);
         
     }
 
-    // CART CONTEXT 
-
-    const { addItem, removeItem, clear, isInCart } = useCartContext();
-
-
+    
     return (
         <div className="itemdetail-wrapper">
             <div className="item-image">
@@ -50,7 +52,7 @@ export const ItemDetail = (props) => {
                 <h2> {props.details.name} </h2>
                 <h3> ${props.details.price} </h3>
                 <p> {props.details.description} </p>
-                <ItemCount stock={stock} initial={count} count={count} add={add} remove={remove} onAdd={onAdd} display={display} />
+                <ItemCount stock={stock} initial={count} count={count} item={props.details} add={add} remove={remove} onAdd={onAdd} display={display} />
                 
             </div>
         </div>
