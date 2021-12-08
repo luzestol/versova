@@ -1,5 +1,6 @@
 import "./CartContainer.css"
 import { Cart } from '../../components/Cart/Cart';
+import { Forms } from '../../components/Forms/Forms';
 import { useCartContext } from '../../contexts/CartContext/CartContext';
 import { Link } from 'react-router-dom';
 
@@ -20,12 +21,18 @@ export const CartContainer = () => {
                         </div>
                          
                     );
+
                 }) : 
                     <div className="wrapper flex flex-column">
                         <h2 className="h2">No tenés nada en el carrito 😢 </h2>
                         <Link to={`/`}><button>¡Ir a comprar!</button></Link>
+                        
                     </div>
                       
+            }
+
+            {
+                <Forms totalPrice={totalPrice} />
             }
         </>
 

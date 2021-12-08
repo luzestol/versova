@@ -1,0 +1,30 @@
+.forms-wrapper {
+    width: 100%;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    align-items: center;
+    margin: 2em 0 0 0;
+}
+
+.forms {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 100px rgba(50, 50, 50, 0.1);
+    padding: 25px;
+    max-width: 500px;
+    border-radius: 25px;
+}
+
+.forms span {
+    margin-bottom: 1em;
+}
+
+.forms form {
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+}
+
