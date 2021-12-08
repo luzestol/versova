@@ -2,9 +2,11 @@ import './ItemListContainer.css';
 import '../../components/ItemCount/ItemCount.css';
 import { Header } from '../../components/Header/Header';
 import { ItemList } from '../../components/ItemList/ItemList';
-import {productsData} from '../../productsData/productsData.js';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { getFirestore } from "../../firebase";
+import { collection, getDocs } from "firebase/firestore";
+import { where, query } from "firebase/firestore"; 
 
 
 export function ItemListContainer () {
@@ -13,33 +15,34 @@ export function ItemListContainer () {
     const { categoryId } = useParams();
 
     useEffect(() => {
-        const promiseItemList = new Promise ((resolve,reject) => {
 
-        setTimeout(() => {
-            resolve(productsData);
-        }, 2000)
-  
-    });
+    const database = getFirestore();
+    //console.log(database);
 
-    promiseItemList.then(
-        (result) => {
-            //console.log(result);
-            if(categoryId) {
-                const products = result.filter((products) => products.category === categoryId);
-                //console.log(categoryId);
-                setProducts(products);
-                //console.log(products);
-            } else {
-                setProducts(result);
-            }
-             
-        }, (err) => {
-            //console.log(err);
-        }
-    )
-    .catch((err) => {
-        //console.log(err);
+    if(categoryId) {
+
+    // TRAER LOS ITEMS SEGÚN CATEGORÍA
+
+    const q = query(collection(database, "items"), where("category", "==", categoryId));
+
+    getDocs(q).then((snapshot) => {
+        const itemsByCategory = snapshot.docs.map((doc) => doc.data());
+        console.log();
+        setProducts(itemsByCategory);
     });
+        
+    } else {
+
+    // TRAER TODOS LOS ITEMS DE LA COLLECTION
+
+    getDocs(collection(database, "items")).then((snapshot) => {
+      const items = snapshot.docs.map((doc) => doc.data());
+      console.log(items);
+      setProducts(items);
+    });
+        
+    }
+        
 
     }, [categoryId]);
 

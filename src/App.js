@@ -7,11 +7,12 @@ import { NavBar } from './components/NavBar/NavBar.js';
 import { Footer } from './components/Footer/Footer.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider} from './contexts/CartContext/CartContext';
-/*
+
 import { useEffect } from 'react';
 import { getFirestore } from "./firebase";
-import { doc, getDoc } from "firebase/firestore";
-import { collection, getDocs, where, query } from "firebase/firestore";*/
+//import { doc, getDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
+import { where, query } from "firebase/firestore"; 
 
 function App() {
 
@@ -36,18 +37,19 @@ function App() {
 
   /*useEffect(() => {
 
-    // PARA TRAER TODOS LOS ELEMENTOS DE LA COLECTION
+    // PARA TRAER TODOS LOS ELEMENTOS DE LA COLLECTION
 
     const database = getFirestore();
-    console.log(database);
+    //console.log(database);
 
     getDocs(collection(database, "items")).then((snapshot) => {
-      console.log(snapshot.docs.map((doc) => doc.data()));
+      const items = snapshot.docs.map((doc) => doc.data());
+      console.log(items);
     });
 
 
 
-  }, [])*/
+  }, []);*/
 
   /*useEffect(() => {
 
@@ -56,7 +58,7 @@ function App() {
     const database = getFirestore();
     console.log(database);
 
-    const q = query(collection(database, "items"), where("price", ">", 100));
+    const q = query(collection(database, "items"), where("id", "==", 1));
 
     getDocs(q).then((snapshot) => {
       console.log(snapshot.docs.map((doc) => doc.data()));
