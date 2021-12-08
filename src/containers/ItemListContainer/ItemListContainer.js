@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 
 export function ItemListContainer () {
 
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState(null);
     const { categoryId } = useParams();
 
     useEffect(() => {
@@ -46,9 +46,10 @@ export function ItemListContainer () {
     return (
         <>
             <Header />
-            <h2>PRODUCTOS</h2>
+            { categoryId ? <h2>{categoryId}</h2> : <h2>PRODUCTOS</h2> }
+            
             <div className="wrapper flex-row"> 
-                <ItemList products={products} />
+               { products ? <ItemList products={products} /> : "Loading..." }
             </div>
         </>
         
