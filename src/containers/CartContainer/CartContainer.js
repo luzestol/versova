@@ -23,10 +23,8 @@ export const CartContainer = () => {
         const database = getFirestore();
         const ordersCollection = collection(database, "orders");
 
-        addDoc(ordersCollection, order);
-
-        alert("Me ejecute");
-
+        addDoc(ordersCollection, order).then(({ id }) => 
+        console.log("Nuevo producto agregado. Id: " + id));
 
     };
 
