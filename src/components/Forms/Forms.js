@@ -4,7 +4,7 @@ export const Forms = (props) => {
     return (
         <div className="forms-wrapper">
             <div className="forms">
-                <form>
+                <div className="form">
                     <span>Total: ${props.totalPrice} </span>
                     <label for="name">Nombre</label>
                     <input type="text" id="name" name="name"></input>
@@ -12,8 +12,8 @@ export const Forms = (props) => {
                     <input type="number" id="phone" name="phone"></input>
                     <label for="email">Email</label>
                     <input type="text" id="email" name="email"></input>
-                    <button className="button-primary" >Iniciar Compra</button>
-                </form>
+                    <button href="" onClick={ props.sendOrder} className="button-primary" >Iniciar Compra</button>
+                </div>
             </div>
         </div>
     )

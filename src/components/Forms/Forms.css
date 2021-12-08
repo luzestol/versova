@@ -22,7 +22,7 @@
     margin-bottom: 1em;
 }
 
-.forms form {
+.forms .form {
     display: flex;
     flex-direction: column;
     min-width: 500px;

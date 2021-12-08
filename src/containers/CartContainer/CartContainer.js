@@ -3,12 +3,36 @@ import { Cart } from '../../components/Cart/Cart';
 import { Forms } from '../../components/Forms/Forms';
 import { useCartContext } from '../../contexts/CartContext/CartContext';
 import { Link } from 'react-router-dom';
+import { getFirestore } from "../../firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 export const CartContainer = () => {
 
     const { cart, totalPrice } = useCartContext();
     console.log(useCartContext());
     console.log(cart);
+
+    const sendOrder = () => {
+
+        const order = {
+            buyer: { name: "Luz", phone: "11", email: "@gmail.com"},
+            items: [{name: "Test", price: 100}] ,
+            total: 100
+        };
+
+        const database = getFirestore();
+        const ordersCollection = collection(database, "orders");
+
+        addDoc(ordersCollection, order);
+
+        alert("Me ejecute");
+
+
+    };
+
+    
+
+
 
     return (
         <>
@@ -32,7 +56,7 @@ export const CartContainer = () => {
             }
 
             {
-                <Forms totalPrice={totalPrice} />
+                <Forms totalPrice={totalPrice} sendOrder={sendOrder} />
             }
         </>
 
