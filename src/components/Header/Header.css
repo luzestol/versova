@@ -1,0 +1,17 @@
+.header-wrapper {
+    margin-bottom: 5em;
+}
+
+.header {
+    height: 600px;
+    width: 100%;
+    background-image: url('../../img/header.jpg');
+    background-size: cover;
+}
+
+.header h1 {
+    color: #ffffff;
+    position: absolute;
+    top: 180px;
+    right: 200px;
+}

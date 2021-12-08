@@ -1,5 +1,6 @@
 import './ItemListContainer.css';
 import '../../components/ItemCount/ItemCount.css';
+import { Header } from '../../components/Header/Header';
 import { ItemList } from '../../components/ItemList/ItemList';
 import {productsData} from '../../productsData/productsData.js';
 import { useEffect, useState } from 'react';
@@ -43,9 +44,13 @@ export function ItemListContainer () {
     }, [categoryId]);
 
     return (
-        <div className="wrapper flex-row">
-            <ItemList products={products} />
-        </div>
+        <>
+            <Header />
+            <h2>PRODUCTOS</h2>
+            <div className="wrapper flex-row"> 
+                <ItemList products={products} />
+            </div>
+        </>
         
     )
 

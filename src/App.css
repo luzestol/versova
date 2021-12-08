@@ -46,6 +46,11 @@
   align-items: center;
 }
 
+h2 {
+  text-align: center;
+  color: #323232;
+}
+
 a {
   color: #323232;
   text-decoration: none;
