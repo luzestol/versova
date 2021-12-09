@@ -8,7 +8,7 @@ import { collection, addDoc } from "firebase/firestore";
 
 export const CartContainer = () => {
 
-    const { cart, totalPrice } = useCartContext();
+    const { cart, totalPrice, clear } = useCartContext();
     console.log(useCartContext());
     console.log(cart);
 
@@ -16,15 +16,18 @@ export const CartContainer = () => {
 
         const order = {
             buyer: { name: "Luz", phone: "11", email: "@gmail.com"},
-            items: [{name: "Test", price: 100}] ,
-            total: 100
+            items: cart ,
+            total: totalPrice
         };
+        
 
         const database = getFirestore();
         const ordersCollection = collection(database, "orders");
 
         addDoc(ordersCollection, order).then(({ id }) => 
-        console.log("Nuevo producto agregado. Id: " + id));
+        alert("¡Felicitaciones! Ya compraste tus productos. ID de seguimiento: " + id));
+
+        clear();
 
     };
 

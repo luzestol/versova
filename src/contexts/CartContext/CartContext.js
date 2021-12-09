@@ -46,6 +46,7 @@ export const CartProvider = ({children}) => {
     const clear = () => {
         setCart([]);
         console.log("Cart cleared");
+        setTotalItems(0);
     }
 
     return (
