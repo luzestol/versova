@@ -1,3 +1,6 @@
+![Versova - Google Chrome 2021-12-08 22-40-49](https://user-images.githubusercontent.com/51965921/145319448-f87b9bdb-4bf7-41e1-bb52-88e0481be47d.gif)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
